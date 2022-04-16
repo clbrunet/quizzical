@@ -1,11 +1,12 @@
 .App {
   width: 100vw;
   height: 100vh;
-  background-color: rgb(245, 247, 251);
+  background-color: #F5F7FB;
   background-image: url("./assets/bottom-left-blob.png"), url("./assets/top-right-blob.png");
   background-position: bottom left, top right;
   background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Inter', sans-serif;
 }
