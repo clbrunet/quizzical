@@ -48,13 +48,15 @@ function Quiz() {
   }
 
   const questionsElements = questions.map((question, questionIndex) => (
-    <Question
-      key={question.title}
-      title={question.title}
-      answers={question.answers}
-      guess={guesses[questionIndex]}
-      handleChange={(event: ChangeEvent<HTMLInputElement>) => handleChange(event, questionIndex)}
-      />
+    <div key={question.title}>
+      <Question
+        title={question.title}
+        answers={question.answers}
+        guess={guesses[questionIndex]}
+        handleChange={(event: ChangeEvent<HTMLInputElement>) => handleChange(event, questionIndex)}
+        />
+        <hr className="question-divider"/>
+    </div>
   ));
 
   return (

@@ -1,0 +1,12 @@
+.Quiz {
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+  max-width: 700px;
+}
+
+.question-divider {
+  margin-top: 5px;
+  border: none;
+  border-bottom: 1px solid #DBDEF0;
+}

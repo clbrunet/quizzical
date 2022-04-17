@@ -1,0 +1,43 @@
+.question-title {
+  font-size: 16px;
+}
+
+.answers-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: fit-content;
+}
+
+.answers-container input[type=radio] {
+  display: none;
+  box-sizing: content-box;
+  margin: 0;
+}
+
+.answer-container {
+  height: auto;
+}
+
+.answer-label {
+  display: block;
+  font-size: 11px;
+  padding: 5px 15px;
+  border: solid 1px #293264;
+  border-style: inset;
+  border-radius: 8px;
+  margin-right: 13px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.answers-container > :last-child .answer-label {
+  margin-right: 0;
+}
+
+
+.answers-container input[type=radio]:checked + .answer-label {
+  background-color: #D6DBF5;
+  border: none;
+  padding: 6px 16px;
+}

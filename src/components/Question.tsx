@@ -10,10 +10,7 @@ type QuestionProps = {
 
 function Question(props: QuestionProps) {
   const answersElements = props.answers.map(answer => (
-    <div key={answer}>
-      <label htmlFor={answer}>
-        {answer}
-      </label>
+    <div key={answer} className="answer-container">
       <input
         type="radio"
         id={answer}
@@ -21,13 +18,18 @@ function Question(props: QuestionProps) {
         checked={props.guess === answer}
         onChange={props.handleChange}
         />
+      <label htmlFor={answer} className="answer-label">
+        {answer}
+      </label>
     </div>
   ));
 
   return (
     <div className="Question">
-      <h2>{props.title}</h2>
-      {answersElements}
+      <h2 className="question-title">{props.title}</h2>
+      <div className="answers-container">
+        {answersElements}
+      </div>
     </div>
   );
 }
