@@ -11,8 +11,6 @@
 
 .answers-container input[type=radio] {
   display: none;
-  box-sizing: content-box;
-  margin: 0;
 }
 
 .answer-container {

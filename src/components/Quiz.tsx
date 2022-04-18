@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import Question from './Question';
 import './Quiz.css';
 
@@ -47,6 +47,12 @@ function Quiz() {
     }));
   }
 
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    // TODO: to implement
+    console.log("handleSubmit not implemented")
+  }
+
   const questionsElements = questions.map((question, questionIndex) => (
     <div key={question.title}>
       <Question
@@ -55,14 +61,15 @@ function Quiz() {
         guess={guesses[questionIndex]}
         handleChange={(event: ChangeEvent<HTMLInputElement>) => handleChange(event, questionIndex)}
         />
-        <hr className="question-divider"/>
+      <hr className="question-divider"/>
     </div>
   ));
 
   return (
-    <div className="Quiz">
+    <form onSubmit={handleSubmit} className="Quiz">
       {questionsElements}
-    </div>
+      <button className="button">Check answers</button>
+    </form>
   );
 }
 

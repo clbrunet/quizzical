@@ -13,3 +13,12 @@
   font-family: 'Inter', sans-serif;
   color: #293264;
 }
+
+.button {
+  cursor: pointer;
+  background-color: #4D5B9E;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 10px;
+  color: #F5F7FB;
+}

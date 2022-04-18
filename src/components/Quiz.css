@@ -10,3 +10,9 @@
   border: none;
   border-bottom: 1px solid #DBDEF0;
 }
+
+.Quiz .button {
+  width: fit-content;
+  align-self: center;
+  margin: 20px;
+}

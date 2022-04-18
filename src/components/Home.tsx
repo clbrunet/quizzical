@@ -7,9 +7,9 @@ type HomeProps = {
 function Home(props: HomeProps) {
   return (
     <div className="Home">
-      <h1 className="Home-title">Quizzical</h1>
+      <h1>Quizzical</h1>
       <p>General Knowledge Quiz</p>
-      <button className="Home-button" onClick={props.startQuiz}>Start quiz</button>
+      <button className="button" onClick={props.startQuiz}>Start quiz</button>
     </div>
   );
 }

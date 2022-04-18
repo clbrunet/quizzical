@@ -14,6 +14,7 @@ function Question(props: QuestionProps) {
       <input
         type="radio"
         id={answer}
+        name={props.title}
         value={answer}
         checked={props.guess === answer}
         onChange={props.handleChange}
