@@ -21,8 +21,7 @@
   display: block;
   font-size: 11px;
   padding: 5px 15px;
-  border: solid 1px #293264;
-  border-style: inset;
+  border: solid 1px var(--text-color);
   border-radius: 8px;
   margin-right: 13px;
   margin-bottom: 10px;
@@ -35,7 +34,7 @@
 
 
 .answers-container input[type=radio]:checked + .answer-label {
-  background-color: #D6DBF5;
+  background-color: var(--secondary-color);
   border: none;
   padding: 6px 16px;
 }
