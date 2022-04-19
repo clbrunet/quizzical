@@ -26,12 +26,12 @@ function Question(props: QuestionProps) {
   ));
 
   return (
-    <div className="Question">
+    <>
       <h2 className="question-title">{props.title}</h2>
       <div className="answers-container">
         {answersElements}
       </div>
-    </div>
+    </>
   );
 }
 

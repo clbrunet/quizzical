@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
+import { ChangeEvent, FormEvent, Fragment, useEffect, useState } from 'react';
 import Question from './Question';
 import './Quiz.css';
 
@@ -54,7 +54,7 @@ function Quiz() {
   }
 
   const questionsElements = questions.map((question, questionIndex) => (
-    <div key={question.title}>
+    <Fragment key={question.title}>
       <Question
         title={question.title}
         answers={question.answers}
@@ -62,7 +62,7 @@ function Quiz() {
         handleChange={(event: ChangeEvent<HTMLInputElement>) => handleChange(event, questionIndex)}
         />
       <hr className="question-divider"/>
-    </div>
+    </Fragment>
   ));
 
   return (
