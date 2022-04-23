@@ -2,6 +2,10 @@ import { ChangeEvent, FormEvent, Fragment, useEffect, useState } from 'react';
 import Question from './Question';
 import './Quiz.css';
 
+type QuizProps = {
+  resetComponent: () => void;
+};
+
 type OpenTDBQuestion = {
   correct_answer: string;
   incorrect_answers: string[];
@@ -14,7 +18,7 @@ type QuestionObject = {
   answers: string[];
 };
 
-function Quiz() {
+function Quiz(props: QuizProps) {
   const [questions, setQuestions] = useState<QuestionObject[]>([]);
   const [guesses, setGuesses] = useState<string[]>(["", "", "", ""]);
   const [score, setScore] = useState<number>(0);
@@ -60,8 +64,7 @@ function Quiz() {
         return acc;
       }, 0));
     } else {
-      // TODO play again
-      console.log('Play again not yet implemented');
+      props.resetComponent();
     }
   }
 
