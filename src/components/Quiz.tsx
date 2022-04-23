@@ -17,6 +17,8 @@ type QuestionObject = {
 function Quiz() {
   const [questions, setQuestions] = useState<QuestionObject[]>([]);
   const [guesses, setGuesses] = useState<string[]>(["", "", "", ""]);
+  const [score, setScore] = useState<number>(0);
+  const [shouldShowResult, setShouldShowResult] = useState<boolean>(false);
 
   useEffect(() => {
     fetch('https://opentdb.com/api.php?amount=4&type=multiple&encode=url3986')
@@ -49,17 +51,29 @@ function Quiz() {
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    // TODO: to implement
-    console.log("handleSubmit not implemented")
+    if (shouldShowResult === false) {
+      setShouldShowResult(true);
+      setScore(guesses.reduce((acc, guess, index) => {
+        if (guess === questions[index].correctAnswer) {
+          return acc + 1;
+        }
+        return acc;
+      }, 0));
+    } else {
+      // TODO play again
+      console.log('Play again not yet implemented');
+    }
   }
 
   const questionsElements = questions.map((question, questionIndex) => (
     <Fragment key={question.title}>
       <Question
         title={question.title}
+        correctAnswer={question.correctAnswer}
         answers={question.answers}
         guess={guesses[questionIndex]}
         handleChange={(event: ChangeEvent<HTMLInputElement>) => handleChange(event, questionIndex)}
+        shouldShowResult={shouldShowResult}
         />
       <hr className="question-divider"/>
     </Fragment>
@@ -68,7 +82,12 @@ function Quiz() {
   return (
     <form onSubmit={handleSubmit} className="Quiz">
       {questionsElements}
-      <button className="button">Check answers</button>
+      <div className="score-button-container">
+        {shouldShowResult && <h5>You scored {score}/{guesses.length} correct answers</h5>}
+        <button className="button">
+          {shouldShowResult ? "Play again" : "Check answers"}
+        </button>
+      </div>
     </form>
   );
 }

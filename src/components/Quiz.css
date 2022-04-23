@@ -15,3 +15,10 @@
   align-self: center;
   margin: 20px;
 }
+
+.score-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

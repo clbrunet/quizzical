@@ -3,11 +3,15 @@
   --_bluer-white: #D6DBF5;
   --_blue: #4D5B9E;
   --_darker-blue: #293264;
+  --_light-green: #94D7A2;
+  --_light-red: #F8BCBC;
 
   --neutral-color: var(--_white);
   --secondary-color: var(--_bluer-white);
   --action-color: var(--_blue);
   --text-color: var(--_darker-blue);
+  --correct-answer-color: var(--_light-green);
+  --wrong-answer-color: var(--_light-red);
 }
 
 .App {

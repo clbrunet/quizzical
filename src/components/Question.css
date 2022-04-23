@@ -32,9 +32,24 @@
   margin-right: 0;
 }
 
-
 .answers-container input[type=radio]:checked + .answer-label {
   background-color: var(--secondary-color);
   border: none;
   padding: 6px 16px;
+}
+
+.answers-container input[type=radio][disabled] + .answer-label {
+  cursor: default;
+}
+
+.answer-label-correct {
+  border: none;
+  padding: 6px 16px;
+  background-color: var(--correct-answer-color);
+}
+
+.answer-label-wrong {
+  border: none;
+  padding: 6px 16px;
+  background-color: var(--wrong-answer-color);
 }
