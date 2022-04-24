@@ -84,7 +84,9 @@ function Quiz(props: QuizProps) {
 
   return (
     <form onSubmit={handleSubmit} className="Quiz">
-      {questionsElements}
+      {questions.length === 0
+        ? <h2 style={{alignSelf: 'center'}}>Loading questions...</h2>
+        : questionsElements}
       <div className="score-button-container">
         {shouldShowResult && <h5>You scored {score}/{guesses.length} correct answers</h5>}
         <button className="button">
